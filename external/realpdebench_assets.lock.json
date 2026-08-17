@@ -1,0 +1,17 @@
+{
+  "purpose": "Public reproducibility snapshot for the RealPDEBench Cylinder experiment",
+  "source_repository": "AI4Science-WestlakeU/RealPDEBench",
+  "source_git_commit": "62f4c80ab17f78933d046f2b038531dbc6a478a0",
+  "dataset_repository": "AI4Science-WestlakeU/RealPDEBench",
+  "dataset_revision": "5c2bc33eaf79460824a54abfe547198faebd190f",
+  "model_repository": "AI4Science-WestlakeU/RealPDEBench-models",
+  "model_revision": "3c377d3a3c1cb344d37062b5c60221c06dd82395",
+  "base_finetune_checkpoint": "cylinder/fno/numerical.pth",
+  "scenario": "cylinder",
+  "note": "Immutable public revisions defining the reproducibility snapshot; external source/data/checkpoints are not redistributed in this archive.",
+  "licenses": {
+    "source_repository": "CC BY-NC 4.0",
+    "dataset_repository": "CC BY-NC 4.0",
+    "model_repository": "CC BY 4.0"
+  }
+}

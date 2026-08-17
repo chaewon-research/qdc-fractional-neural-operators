@@ -1,0 +1,35 @@
+experiment: anisotropic_n16_smaller
+resolution: 16
+lambda: 0.15
+seeds:
+- 42
+- 43
+- 44
+data:
+  train: 768
+  val: 128
+  test_id: 128
+  high_contrast: 192
+  extreme: 128
+model:
+  width: 48
+  modes: 6
+  layers: 4
+  hidden: 64
+  append_coords: true
+  local_kernel: 3
+  normalization: GroupNorm
+  residual_scale: 0.15
+  hidden2: 64
+training:
+  optimizer: AdamW
+  epochs: 140
+  batch_size: 24
+  lr: 0.002
+  weight_decay: 1.0e-05
+  grad_clip: 1.0
+  scheduler: cosine
+objective:
+  event: 1.0
+  rel_l2: 0.5
+  residual: 0.25

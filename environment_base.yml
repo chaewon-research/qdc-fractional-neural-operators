@@ -1,0 +1,15 @@
+# Base non-PyTorch dependencies only.
+# Install the workflow-specific PyTorch build first; see ENVIRONMENTS.md.
+name: qdc-fractional-neural-operators-base
+channels:
+  - conda-forge
+dependencies:
+  - python=3.11
+  - pip
+  - pip:
+      - numpy==2.3.5
+      - scipy==1.17.0
+      - pandas==2.2.3
+      - matplotlib==3.10.8
+      - PyYAML==6.0.3
+      - pytest==9.0.2

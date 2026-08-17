@@ -1,0 +1,25 @@
+{
+  "backward_pass": true,
+  "device": "cpu",
+  "epochs": 2,
+  "forward_paths": {
+    "act_q6": {
+      "finite": true,
+      "shape_ok": true
+    },
+    "fp32": {
+      "finite": true,
+      "shape_ok": true
+    },
+    "weight_q6": {
+      "finite": true,
+      "shape_ok": true
+    }
+  },
+  "gradients_finite": true,
+  "no_nan_inf": true,
+  "not_comparable_to_paper": true,
+  "purpose": "API/shape/numerical-sanity execution smoke test only",
+  "resolution": 8,
+  "scientific_result": false
+}

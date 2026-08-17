@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=70", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "qdc-fractional-neural-operators"
+version = "0.1.0"
+description = "Reference implementation for Conditional Precision Bottlenecks and Quantized Defect Correction in Fractional Neural Operators"
+readme = "README.md"
+authors = [{name = "Chaewon Yoon"}]
+requires-python = ">=3.10"
+dependencies = [
+  "numpy==2.3.5",
+  "scipy==1.17.0",
+  "pandas==2.2.3",
+  "matplotlib==3.10.8",
+  "PyYAML==6.0.3",
+]
+
+[tool.setuptools.packages.find]
+include = ["qdc_fno*"]
+
+[project.optional-dependencies]
+test = ["pytest==9.0.2"]

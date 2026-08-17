@@ -1,0 +1,28 @@
+# Python/test caches
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# Local environments
+.venv/
+venv/
+env/
+conda-env/
+
+# Fresh/generated scientific outputs. Retained reference artifacts are explicitly un-ignored.
+results/*
+!results/reference/
+!results/reference/**
+!results/smoke_execution_only.json
+work/
+*.validation_qdc.pt
+*.qdc.pt
+
+# External checkouts / downloaded assets
+external/RealPDEBench/
+external/realpdebench_checkpoints/
+
+# Editor / OS noise
+.DS_Store
+.vscode/
+.idea/

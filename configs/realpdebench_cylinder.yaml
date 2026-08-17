@@ -1,0 +1,29 @@
+experiment: realpdebench_cylinder
+upstream:
+  repository: https://github.com/AI4Science-WestlakeU/RealPDEBench
+  git_commit: 62f4c80ab17f78933d046f2b038531dbc6a478a0
+  config: realpdebench/configs/cylinder/fno.yaml
+scenario: cylinder
+dataset_type: real
+training_paradigm: finetune
+seeds: [0, 1, 2, 3, 4]
+test_mode: all
+model:
+  family: FNO3d
+  modes1: 4
+  modes2: 12
+  modes3: 16
+  layers: 4
+  width: 64
+normalization: gaussian
+autoregressive_steps: 10
+test_batch_size: 64
+measured_channels: 2
+quantization:
+  bits: 6
+  variants: [activation, weight]
+statistics:
+  interval: paired_student_t
+  confidence: 0.95
+
+asset_lock: external/realpdebench_assets.lock.json

@@ -1,0 +1,304 @@
+{
+  "provenance": "manually rechecked historical outputs; coarse bounds retained where exact seed-level rows were not supplied in the retained project records",
+  "core_seed_semantics": {
+    "run_seeds": [
+      42,
+      43,
+      44
+    ],
+    "data_seed_offsets": {
+      "train": 0,
+      "validation": 10000,
+      "holdout": 30000
+    },
+    "interpretation": "independent training/data-generation runs; quantization variants matched within run"
+  },
+  "higher_resolution_absolute_bands": {
+    "64": {
+      "rel_l2": {
+        "fp32": [
+          0.065,
+          0.08
+        ],
+        "q6_weight": [
+          0.068,
+          0.083
+        ],
+        "q6_activation": [
+          0.101,
+          0.116
+        ]
+      },
+      "residual": {
+        "fp32": [
+          0.16,
+          0.2
+        ],
+        "q6_weight": [
+          0.165,
+          0.205
+        ],
+        "q6_activation": [
+          0.278,
+          0.318
+        ]
+      }
+    },
+    "128": {
+      "rel_l2": {
+        "fp32": [
+          0.075,
+          0.095
+        ],
+        "q6_weight": [
+          0.078,
+          0.1
+        ],
+        "q6_activation": [
+          0.115,
+          0.137
+        ]
+      },
+      "residual": {
+        "fp32": [
+          0.18,
+          0.23
+        ],
+        "q6_weight": [
+          0.185,
+          0.235
+        ],
+        "q6_activation": [
+          0.303,
+          0.353
+        ]
+      }
+    }
+  },
+  "realpdebench_absolute_mean_bands": {
+    "fp32": {
+      "rel_l2": [
+        0.075,
+        0.09
+      ],
+      "frmse": [
+        0.008,
+        0.0095
+      ]
+    },
+    "q6_weight": {
+      "rel_l2": [
+        0.078,
+        0.095
+      ],
+      "frmse": [
+        0.0082,
+        0.01
+      ]
+    },
+    "q6_activation": {
+      "rel_l2": [
+        0.103,
+        0.12
+      ],
+      "frmse": [
+        0.0143,
+        0.0161
+      ]
+    }
+  },
+  "batch_size_audit": {
+    "batch_sizes": [
+      1,
+      4,
+      8,
+      16,
+      32
+    ],
+    "ordering_activation_worse_all": true,
+    "q6_weight_rel_l2_band": [
+      0.057,
+      0.061
+    ],
+    "q6_activation_rel_l2_band": [
+      0.074,
+      0.09
+    ],
+    "q6_weight_residual_band": [
+      0.142,
+      0.15
+    ],
+    "q6_activation_residual_band": [
+      0.2,
+      0.255
+    ],
+    "minimum_rel_l2_gap_approx": 0.015,
+    "minimum_residual_gap_approx": 0.05
+  },
+  "scale_protocol_audit": {
+    "protocols": [
+      "batchwise_dynamic",
+      "per_sample_dynamic",
+      "frozen_calibration"
+    ],
+    "ordering_activation_worse_all": true,
+    "minimum_rel_l2_gap_approx": 0.012,
+    "per_sample_activation_rel_l2_band": [
+      0.075,
+      0.083
+    ],
+    "frozen_activation_rel_l2_band": [
+      0.08,
+      0.09
+    ]
+  },
+  "integer_bit_sweep_rel_l2_bands": {
+    "4": {
+      "weight": [
+        0.075,
+        0.095
+      ],
+      "activation": [
+        0.16,
+        0.22
+      ]
+    },
+    "5": {
+      "weight": [
+        0.062,
+        0.07
+      ],
+      "activation": [
+        0.105,
+        0.13
+      ]
+    },
+    "6": {
+      "weight": [
+        0.0578,
+        0.0578
+      ],
+      "activation": [
+        0.0869,
+        0.0869
+      ]
+    },
+    "7": {
+      "weight": [
+        0.056,
+        0.059
+      ],
+      "activation": [
+        0.07,
+        0.08
+      ]
+    },
+    "8": {
+      "weight": [
+        0.0555,
+        0.0575
+      ],
+      "activation": [
+        0.062,
+        0.07
+      ]
+    }
+  },
+  "qdc_selector": {
+    "candidate_k": [
+      82,
+      102,
+      123,
+      128
+    ],
+    "selected_k": 82,
+    "smallest_strong_feasible": true,
+    "selected_rel_l2": 0.0156,
+    "selected_residual": 0.2694,
+    "selected_objective": 0.0679
+  },
+  "lobpcg_sweep": {
+    "candidate_k": [
+      41,
+      50,
+      82,
+      100,
+      150,
+      200,
+      250
+    ],
+    "first_95pct_crossing": {
+      "32": 82,
+      "64": 150,
+      "128": 200
+    },
+    "n32_k250_dense_fallback": true
+  },
+  "a100_break_even": {
+    "batches_vs_fp32": 39.2747930464,
+    "examples_vs_fp32": 628.396688742,
+    "setup_inclusive_examples_per_s_40_batches": 7462.82754914,
+    "setup_inclusive_examples_per_s_50_batches": 7719.36444618,
+    "setup_inclusive_examples_per_s_100_batches": 8289.25566015
+  },
+  "target_solver_validation": {
+    "historical_max_relative_target_error": 3.0789081233828142e-12,
+    "historical_max_relative_physical_residual": 2.348848569733172e-12,
+    "clean_package_max_relative_target_error": 7.289658746902102e-12,
+    "clean_package_max_relative_physical_residual": 2.3474162582226906e-12,
+    "paper_robust_target_error_bound": 1e-11
+  },
+  "a100_workload_provenance": {
+    "pde_family": "scalar_fractional_darcy",
+    "model": {
+      "resolution": 32,
+      "width": 96,
+      "retained_modes": 12,
+      "spectral_layers": 6,
+      "head_width": 128,
+      "train_examples": 1800,
+      "validation_examples": 256,
+      "epochs": 200,
+      "training_batch_size": 16,
+      "optimizer": "AdamW",
+      "learning_rate": 0.0018,
+      "weight_decay": 1e-05,
+      "checkpoint_selection": "minimum_validation_MSE"
+    },
+    "fixed_operator": {
+      "lambda": 0.15,
+      "s": 0.65,
+      "coefficient_contrast_approx": 1.0
+    },
+    "query_count": 1600,
+    "varying_quantity": "forcing_f",
+    "matched_conditions": {
+      "same_base_checkpoint": true,
+      "same_query_stream": true,
+      "same_metric_implementation": true
+    },
+    "distinct_scale_stress": {
+      "different_checkpoint": true,
+      "sample_varying_high_contrast_ood_operator_and_forcing": true,
+      "smoothness_range": [
+        2.1,
+        3.1
+      ],
+      "contrast_range": [
+        1.0,
+        1.3
+      ],
+      "s_values": [
+        0.45,
+        0.65,
+        0.85,
+        1.0
+      ],
+      "scale_stress_fp32_rel_l2": 0.2843,
+      "hardware_fp32_rel_l2": 0.0555,
+      "directly_comparable": false
+    },
+    "integrated_historical_runner_bundled": false,
+    "raw_per_batch_latency_arrays_bundled": false
+  }
+}

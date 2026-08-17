@@ -1,0 +1,101 @@
+{
+  "provenance": "retained historical aggregate measurement record; latency/amortization fields under derived_arithmetic are consequences of retained throughputs and setup time, not raw timing samples",
+  "scope": "fixed-operator repeated-query A100 operating point",
+  "resolution": 32,
+  "batch_size": 16,
+  "warmup_batches": 50,
+  "measurement_batches": 100,
+  "hardware": {
+    "gpu": "NVIDIA A100-SXM4 40 GB",
+    "architecture": "SM80",
+    "mig": "disabled",
+    "host": "NVIDIA DGX A100 320GB",
+    "driver": "570.133.20",
+    "cuda": "12.8",
+    "pytorch": "2.7.0+cu128",
+    "cutlass": "4.5.3"
+  },
+  "retained_measurements": {
+    "fp32": {
+      "rel_l2": 0.0555,
+      "examples_per_s": 7440
+    },
+    "w8a8": {
+      "rel_l2": 0.0624,
+      "examples_per_s": 11200
+    },
+    "w8a8_qdc_rank41_online": {
+      "rel_l2": 0.0559,
+      "examples_per_s": 8950
+    },
+    "qdc_rank41_setup_ms": 14.25,
+    "reported_setup_inclusive_examples_per_s_100_batches_rounded": 8290
+  },
+  "derived_arithmetic": {
+    "implied_batch_latency_ms": {
+      "fp32": 2.1505376344,
+      "w8a8": 1.4285714286,
+      "w8a8_qdc_rank41_online": 1.7877094972
+    },
+    "setup_inclusive_examples_per_s_100_batches": 8289.25566015,
+    "break_even_batches_vs_fp32": 39.2747930464,
+    "break_even_examples_vs_fp32": 628.396688742,
+    "setup_inclusive_examples_per_s_40_batches": 7462.82754914,
+    "setup_inclusive_examples_per_s_50_batches": 7719.36444618
+  },
+  "raw_per_batch_latency_arrays": "not bundled in this release",
+  "integrated_historical_runner": "not bundled; hardware/ contains the timing harness and four-real-GEMM CUTLASS primitive; fresh end-to-end reconstruction requires specialized integration",
+  "model_and_workload_provenance": {
+    "pde_family": "scalar_fractional_darcy",
+    "model": {
+      "resolution": 32,
+      "width": 96,
+      "retained_modes": 12,
+      "spectral_layers": 6,
+      "head_width": 128,
+      "train_examples": 1800,
+      "validation_examples": 256,
+      "epochs": 200,
+      "training_batch_size": 16,
+      "optimizer": "AdamW",
+      "learning_rate": 0.0018,
+      "weight_decay": 1e-05,
+      "checkpoint_selection": "minimum_validation_MSE"
+    },
+    "fixed_physical_operator": {
+      "lambda": 0.15,
+      "s": 0.65,
+      "coefficient_realization": "single fixed moderate-contrast realization",
+      "coefficient_contrast_approx": 1.0
+    },
+    "query_stream": {
+      "varying_quantity": "forcing_f",
+      "queries": 1600,
+      "batch_size": 16,
+      "same_samples_across_fp32_w8a8_qdc": true,
+      "same_base_checkpoint_across_fp32_w8a8_qdc": true
+    },
+    "contrast_with_n32_scale_stress": {
+      "different_checkpoint": true,
+      "scale_stress_operator": "sample-varying high-contrast/OOD operator and forcing realizations",
+      "scale_stress_smoothness": [
+        2.1,
+        3.1
+      ],
+      "scale_stress_contrast": [
+        1.0,
+        1.3
+      ],
+      "scale_stress_s_values": [
+        0.45,
+        0.65,
+        0.85,
+        1.0
+      ],
+      "scale_stress_fp32_rel_l2": 0.2843,
+      "hardware_workload_fp32_rel_l2": 0.0555,
+      "directly_comparable": false
+    }
+  },
+  "qdc_rank_rationale": "illustrative lower-rank hardware operating point used to expose the accuracy-throughput tradeoff; distinct from the primary calibration-selected fresh-scalar budget"
+}

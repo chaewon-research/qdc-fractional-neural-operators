@@ -1,0 +1,21 @@
+{
+  "qdc_transfer": [
+    {"family":"anisotropic_16","cost":0.425,"objective":0.1511,"residual":0.4917,"tie_residual":0.5574},
+    {"family":"anisotropic_20","cost":0.480,"objective":0.1757,"residual":0.6184,"tie_residual":0.6964},
+    {"family":"fresh_anisotropic_16","cost":0.453,"success":"3/3"},
+    {"family":"fresh_anisotropic_20","cost":0.480,"success":"3/3"},
+    {"family":"fresh_scalar_16","cost":0.320,"objective":0.0679,"residual":0.2694,"success":"3/3"}
+  ],
+  "fresh_scalar_splits": [
+    {"split":1,"fp32_objective":0.2089,"ptq_objective":0.3281,"qdc_objective":0.0663,"fp32_residual":0.2006,"qdc_residual":0.2611},
+    {"split":2,"fp32_objective":0.2333,"ptq_objective":0.3667,"qdc_objective":0.0726,"fp32_residual":0.2245,"qdc_residual":0.2899},
+    {"split":3,"fp32_objective":0.2186,"ptq_objective":0.3450,"qdc_objective":0.0648,"fp32_residual":0.2069,"qdc_residual":0.2571}
+  ],
+  "subspace_ablation": [
+    {"strategy":"residual_energy","objective":0.0679,"residual":0.2694,"rel_l2":0.0156},
+    {"strategy":"defect_energy","objective":0.1658,"residual":0.1281,"rel_l2":0.0742},
+    {"strategy":"low_eigen","objective":0.1054,"residual":0.3157,"rel_l2":0.0276},
+    {"strategy":"high_eigen","objective":0.3343,"residual":0.2566,"rel_l2":0.1556},
+    {"strategy":"random_fixed_k_median","objective":0.2850,"residual":0.3025,"rel_l2":0.1258}
+  ]
+}

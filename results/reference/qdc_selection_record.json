@@ -1,0 +1,26 @@
+{
+  "family": "fresh_scalar_16",
+  "resolution": 16,
+  "candidate_cost_fractions": [
+    0.32,
+    0.4,
+    0.48,
+    0.5
+  ],
+  "candidate_ranks": [
+    82,
+    102,
+    123,
+    128
+  ],
+  "residual_margin_eta": 0.92,
+  "selected_rank_per_fresh_run": [
+    82,
+    82,
+    82
+  ],
+  "selected_cost_fraction": 0.3203125,
+  "selection_outcome": "K=82 selected in all three independent fresh-scalar runs",
+  "provenance_note": "The selector rule, candidate grid, selected rank, and full-candidate outcome were manually rechecked. Exact historical per-candidate metric rows are not bundled and are not reconstructed.",
+  "full_candidate_manual_recheck": "K=82 remains the smallest strong-feasible candidate over [82,102,123,128]; larger candidates may improve some metrics but are not selected under the smallest-strong-feasible rule."
+}

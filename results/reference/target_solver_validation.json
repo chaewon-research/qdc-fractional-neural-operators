@@ -1,0 +1,225 @@
+{
+  "protocol": "float64 adaptive Lanczos function action validated against exact dense eigensolve",
+  "rows": [
+    {
+      "resolution": 16,
+      "sample": 0,
+      "relative_target_error": 1.0175625292732376e-13,
+      "relative_physical_residual": 9.416845985543393e-15,
+      "residual_guard_pass": true,
+      "solver": {
+        "converged": true,
+        "history": [
+          {
+            "dim": 256,
+            "relative_change": null,
+            "iterations": 256,
+            "min_ritz": 1.0885011103308851e-13,
+            "max_ritz": 24524.614828563837
+          }
+        ],
+        "criterion": "full_dimension_projection"
+      }
+    },
+    {
+      "resolution": 16,
+      "sample": 1,
+      "relative_target_error": 4.917267508683141e-13,
+      "relative_physical_residual": 2.426302066125469e-14,
+      "residual_guard_pass": true,
+      "solver": {
+        "converged": true,
+        "history": [
+          {
+            "dim": 256,
+            "relative_change": null,
+            "iterations": 256,
+            "min_ritz": 1.7316208364687039e-13,
+            "max_ritz": 18946.91627354569
+          }
+        ],
+        "criterion": "full_dimension_projection"
+      }
+    },
+    {
+      "resolution": 16,
+      "sample": 2,
+      "relative_target_error": 4.3518841865835085e-13,
+      "relative_physical_residual": 5.3855641696780844e-14,
+      "residual_guard_pass": true,
+      "solver": {
+        "converged": true,
+        "history": [
+          {
+            "dim": 256,
+            "relative_change": null,
+            "iterations": 256,
+            "min_ritz": 0.0,
+            "max_ritz": 30851.111762168246
+          }
+        ],
+        "criterion": "full_dimension_projection"
+      }
+    },
+    {
+      "resolution": 16,
+      "sample": 3,
+      "relative_target_error": 1.0192071069125068e-12,
+      "relative_physical_residual": 1.430581283402892e-13,
+      "residual_guard_pass": true,
+      "solver": {
+        "converged": true,
+        "history": [
+          {
+            "dim": 256,
+            "relative_change": null,
+            "iterations": 256,
+            "min_ritz": 0.0,
+            "max_ritz": 19649.160195866236
+          }
+        ],
+        "criterion": "full_dimension_projection"
+      }
+    },
+    {
+      "resolution": 32,
+      "sample": 0,
+      "relative_target_error": 2.596562599843515e-12,
+      "relative_physical_residual": 2.348848569733172e-12,
+      "residual_guard_pass": true,
+      "solver": {
+        "converged": true,
+        "history": [
+          {
+            "dim": 256,
+            "relative_change": null,
+            "iterations": 256,
+            "min_ritz": 26.518448175094704,
+            "max_ritz": 109412.36522612981
+          },
+          {
+            "dim": 320,
+            "relative_change": 6.938574323049113e-09,
+            "iterations": 320,
+            "min_ritz": 26.518358564014484,
+            "max_ritz": 109412.36522612975
+          }
+        ]
+      }
+    },
+    {
+      "resolution": 32,
+      "sample": 1,
+      "relative_target_error": 4.892845070126735e-13,
+      "relative_physical_residual": 6.591333236987315e-13,
+      "residual_guard_pass": true,
+      "solver": {
+        "converged": true,
+        "history": [
+          {
+            "dim": 256,
+            "relative_change": null,
+            "iterations": 256,
+            "min_ritz": 16.666671792494675,
+            "max_ritz": 84788.67344597711
+          },
+          {
+            "dim": 320,
+            "relative_change": 3.5587797049792544e-07,
+            "iterations": 320,
+            "min_ritz": 16.66662188115184,
+            "max_ritz": 84788.67344597713
+          },
+          {
+            "dim": 384,
+            "relative_change": 5.227656181189006e-10,
+            "iterations": 384,
+            "min_ritz": 16.6666218767845,
+            "max_ritz": 84788.67344597717
+          }
+        ]
+      }
+    },
+    {
+      "resolution": 32,
+      "sample": 2,
+      "relative_target_error": 3.0789081233828142e-12,
+      "relative_physical_residual": 2.579770155236974e-13,
+      "residual_guard_pass": true,
+      "solver": {
+        "converged": true,
+        "history": [
+          {
+            "dim": 256,
+            "relative_change": null,
+            "iterations": 256,
+            "min_ritz": 22.746397073184966,
+            "max_ritz": 136398.26018614267
+          },
+          {
+            "dim": 320,
+            "relative_change": 2.7721903512238566e-07,
+            "iterations": 320,
+            "min_ritz": 22.735639754539797,
+            "max_ritz": 136398.26018614264
+          },
+          {
+            "dim": 384,
+            "relative_change": 3.7651785907785e-10,
+            "iterations": 384,
+            "min_ritz": 22.735639026731132,
+            "max_ritz": 136398.26018614264
+          }
+        ]
+      }
+    },
+    {
+      "resolution": 32,
+      "sample": 3,
+      "relative_target_error": 5.180076272802255e-13,
+      "relative_physical_residual": 1.569771790011927e-12,
+      "residual_guard_pass": true,
+      "solver": {
+        "converged": true,
+        "history": [
+          {
+            "dim": 256,
+            "relative_change": null,
+            "iterations": 256,
+            "min_ritz": 17.276212328656246,
+            "max_ritz": 66275.846765854
+          },
+          {
+            "dim": 320,
+            "relative_change": 4.1543845431047767e-07,
+            "iterations": 320,
+            "min_ritz": 17.276199017204558,
+            "max_ritz": 66275.84676585399
+          },
+          {
+            "dim": 384,
+            "relative_change": 4.057098551109042e-10,
+            "iterations": 384,
+            "min_ritz": 17.276199017085577,
+            "max_ritz": 66275.84676585397
+          }
+        ]
+      }
+    }
+  ],
+  "residual_guard": 1e-06,
+  "max_relative_target_error": 3.0789081233828142e-12,
+  "max_relative_physical_residual": 2.348848569733172e-12,
+  "all_residual_guards_pass": true,
+  "clean_package_validation": {
+    "max_relative_target_error": 7.289658746902102e-12,
+    "max_relative_physical_residual": 2.3474162582226906e-12,
+    "all_residual_guards_pass": true,
+    "interpretation": "fresh clean-package rerun; numerical difference from retained reference is roundoff-scale"
+  },
+  "paper_robust_summary": {
+    "max_relative_target_error_lt": 1e-11,
+    "max_relative_physical_residual_lt": 2.4e-12,
+    "residual_guard": 1e-06
+  }
+}

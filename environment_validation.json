@@ -1,0 +1,14 @@
+{
+  "role": "local package-validation snapshot; not the GPU reproduction target",
+  "python": "3.13.5 (main, Jul 15 2026, 20:25:40) [GCC 14.2.0]",
+  "platform": "Linux-6.18.35-x86_64-with-glibc2.41",
+  "torch": "2.10.0+cpu",
+  "torch_cuda": null,
+  "cuda_available": false,
+  "numpy": "2.3.5",
+  "scipy": "1.17.0",
+  "pandas": "2.2.3",
+  "matplotlib": "3.10.8",
+  "PyYAML": "6.0.3",
+  "pytest": "9.0.2"
+}

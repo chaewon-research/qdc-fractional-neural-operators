@@ -1,0 +1,16 @@
+cff-version: 1.2.0
+message: "If you use this research software, please cite the accompanying preprint and this repository."
+title: "QDC Fractional Neural Operators"
+version: 0.1.0
+date-released: 2026-08-17
+authors:
+  - family-names: Yoon
+    given-names: Chaewon
+repository-code: "https://github.com/chaewon-research/qdc-fractional-neural-operators"
+preferred-citation:
+  type: article
+  title: "Conditional Precision Bottlenecks and Quantized Defect Correction in Fractional Neural Operators"
+  authors:
+    - family-names: Yoon
+      given-names: Chaewon
+  year: 2026

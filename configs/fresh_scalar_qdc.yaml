@@ -1,0 +1,133 @@
+experiment: fresh_scalar_qdc
+resolution: 16
+lambda: 0.15
+seeds:
+- 45
+- 46
+- 47
+data:
+  train: 1200
+  val: 192
+  test_id: 192
+  high_contrast: 256
+  train_alpha:
+  - 2.2
+  - 5.0
+  train_contrast:
+  - 0.55
+  - 1.3
+  train_s:
+  - 0.45
+  - 0.5
+  - 0.65
+  - 0.7
+  - 0.85
+  - 0.9
+  - 1.0
+  id_alpha:
+  - 3.5
+  - 4.8
+  id_contrast:
+  - 0.65
+  - 0.9
+  id_s:
+  - 0.5
+  - 0.7
+  - 0.9
+  - 1.0
+  high_contrast_alpha:
+  - 2.1
+  - 3.1
+  high_contrast_contrast:
+  - 1.0
+  - 1.3
+  high_contrast_s:
+  - 0.45
+  - 0.65
+  - 0.85
+  - 1.0
+  extreme_alpha:
+  - 1.9
+  - 2.4
+  extreme_contrast:
+  - 1.35
+  - 1.55
+  extreme_s:
+  - 0.65
+  - 0.85
+  - 1.0
+  source:
+    train:
+      blobs:
+      - 1
+      - 4
+      amp:
+      - 0.6
+      - 1.7
+      sigma:
+      - 0.055
+      - 0.16
+      negative_prob: 0.3
+      lowfreq_terms:
+      - 1
+      - 3
+      lowfreq_amp:
+      - 0.12
+      - 0.32
+      lowfreq_kmax: 3
+    ood:
+      blobs:
+      - 2
+      - 6
+      amp:
+      - 0.7
+      - 2.0
+      sigma:
+      - 0.035
+      - 0.13
+      negative_prob: 0.3
+      lowfreq_terms:
+      - 1
+      - 4
+      lowfreq_amp:
+      - 0.15
+      - 0.42
+      lowfreq_kmax: 4
+model:
+  width: 84
+  modes: 8
+  layers: 6
+  hidden: 112
+  append_coords: true
+  local_kernel: 3
+  normalization: GroupNorm
+  residual_scale: 0.15
+  hidden2: 64
+training:
+  optimizer: AdamW
+  epochs: 180
+  batch_size: 24
+  lr: 0.0018
+  weight_decay: 1.0e-05
+  grad_clip: 1.0
+  scheduler: cosine
+objective:
+  rel_l2: 1.0
+  event: 1.0
+  residual: 0.1
+  hf_log: 0.25
+qdc:
+  candidate_k:
+  - 82
+  - 102
+  - 123
+  - 128
+  alpha: 1.0
+  residual_margin_eta: 0.92
+  primary_ordering: residual_energy
+  hybrid_beta: 0.25
+  candidate_cost_fractions:
+  - 0.32
+  - 0.4
+  - 0.48
+  - 0.5

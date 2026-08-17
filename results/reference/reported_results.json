@@ -1,0 +1,306 @@
+{
+  "core_scalar_high_contrast": {
+    "seeds": 3,
+    "metric_summary": {
+      "fp32": {
+        "rel_l2": [
+          0.0555,
+          0.0046
+        ],
+        "event_rel_l2": [
+          0.0725,
+          0.0032
+        ],
+        "hf_log": [
+          0.0072,
+          0.0009
+        ],
+        "residual": [
+          0.1414,
+          0.0035
+        ]
+      },
+      "q6_weight": {
+        "rel_l2": [
+          0.0578,
+          0.0042
+        ],
+        "event_rel_l2": [
+          0.0735,
+          0.0026
+        ],
+        "hf_log": [
+          0.0072,
+          0.0009
+        ],
+        "residual": [
+          0.1434,
+          0.0028
+        ]
+      },
+      "q6_activation": {
+        "rel_l2": [
+          0.0869,
+          0.0036
+        ],
+        "event_rel_l2": [
+          0.1013,
+          0.0035
+        ],
+        "hf_log": [
+          0.0103,
+          0.0012
+        ],
+        "residual": [
+          0.2456,
+          0.0066
+        ]
+      },
+      "energy_lowband_activation": {
+        "rel_l2": [
+          0.0663,
+          0.0055
+        ],
+        "event_rel_l2": [
+          0.0834,
+          0.0045
+        ],
+        "hf_log": [
+          0.0131,
+          0.0016
+        ],
+        "residual": [
+          0.2043,
+          0.0099
+        ]
+      },
+      "highband_activation": {
+        "rel_l2": [
+          0.3247,
+          0.0229
+        ],
+        "event_rel_l2": [
+          0.3502,
+          0.0342
+        ],
+        "hf_log": [
+          0.0098,
+          0.0008
+        ],
+        "residual": [
+          0.4623,
+          0.024
+        ]
+      }
+    }
+  },
+  "higher_resolution": {
+    "64": {
+      "rel_gap": [
+        0.0328,
+        0.0292,
+        0.0364
+      ],
+      "residual_gap": [
+        0.1127,
+        0.1015,
+        0.1239
+      ],
+      "order": "5/5"
+    },
+    "128": {
+      "rel_gap": [
+        0.0374,
+        0.033,
+        0.0418
+      ],
+      "residual_gap": [
+        0.1182,
+        0.106,
+        0.1304
+      ],
+      "order": "5/5"
+    }
+  },
+  "realpdebench_cylinder": {
+    "rel_gap": [
+      0.0253,
+      0.0221,
+      0.0285
+    ],
+    "frmse_gap": [
+      0.0061,
+      0.0054,
+      0.0068
+    ],
+    "order": "5/5",
+    "seeds": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "paired_difference_definition": "activation minus weight, within independently fine-tuned checkpoint"
+  },
+  "e4m3fn": {
+    "rel_gap": [
+      0.0066,
+      -0.0012,
+      0.0144
+    ],
+    "order_seeds": 5,
+    "conclusion": "inconclusive"
+  },
+  "lobpcg": {
+    "32": {
+      "k": 82,
+      "same_rank_reference_gain_retention": 0.949
+    },
+    "64": {
+      "k": 150,
+      "rel_gap_closure": 0.794,
+      "residual_gap_closure": 0.842
+    },
+    "128": {
+      "k": 200,
+      "rel_gap_closure": 0.768,
+      "residual_gap_closure": 0.815
+    }
+  },
+  "a100": {
+    "fp32": {
+      "rel_l2": 0.0555,
+      "examples_per_s": 7440
+    },
+    "w8a8": {
+      "rel_l2": 0.0624,
+      "examples_per_s": 11200,
+      "speedup": 1.51
+    },
+    "w8a8_qdc_rank41": {
+      "rel_l2": 0.0559,
+      "examples_per_s": 8950,
+      "speedup": 1.2,
+      "gap_recovery": 0.942
+    },
+    "w8a8_qdc_rank41_setup_inclusive": {
+      "rel_l2": 0.0559,
+      "examples_per_s": 8290,
+      "speedup": 1.11,
+      "setup_ms": 14.25
+    },
+    "protocol": {
+      "batch_size": 16,
+      "warmup_batches": 50,
+      "measurement_batches": 100,
+      "fixed_operator_reuse": true,
+      "amortization_examples": 1600,
+      "tf32": false
+    }
+  },
+  "anisotropic_objective": {
+    "16_base": {
+      "fp32": [
+        0.3014,
+        0.0072
+      ],
+      "q6_weight": [
+        0.3041,
+        0.007
+      ],
+      "q6_activation": [
+        0.4722,
+        0.0354
+      ],
+      "best_mixed": [
+        0.3511,
+        0.013
+      ]
+    },
+    "20_base": {
+      "fp32": [
+        0.3006,
+        0.0169
+      ],
+      "q6_weight": [
+        0.3032,
+        0.017
+      ],
+      "q6_activation": [
+        0.583,
+        0.013
+      ],
+      "best_mixed": [
+        0.3685,
+        0.0173
+      ]
+    },
+    "16_smaller": {
+      "fp32": [
+        0.3019,
+        0.0065
+      ],
+      "q6_weight": [
+        0.3106,
+        0.0109
+      ],
+      "q6_activation": [
+        0.421,
+        0.0232
+      ],
+      "best_mixed": [
+        0.3454,
+        0.0087
+      ]
+    }
+  },
+  "hybrid_audit": {
+    "fresh_scalar": {
+      "success": "3/3",
+      "cost": 0.32,
+      "residual_gain": 0.075,
+      "objective_gain": 0.0023
+    },
+    "anisotropic_16": {
+      "success": "3/3",
+      "cost": 0.32,
+      "residual_gain": 0.1883,
+      "objective_gain": 0.0419
+    },
+    "anisotropic_20": {
+      "success": "3/3",
+      "cost": 0.32,
+      "residual_gain": 0.264,
+      "objective_gain": 0.0613
+    }
+  },
+  "t4_runtime_ms_per_sample": {
+    "scalar_16": {
+      "fp32": 0.528,
+      "ptq_activation": 0.867,
+      "qdc_032": 0.99,
+      "hybrid_032": 1.06,
+      "full_correction": 0.894
+    },
+    "anisotropic_16": {
+      "fp32": 0.479,
+      "ptq_activation": 0.491,
+      "qdc_032": 0.523,
+      "hybrid_032": 0.778,
+      "full_correction": 0.532
+    },
+    "anisotropic_20": {
+      "fp32": 0.55,
+      "ptq_activation": 0.758,
+      "qdc_032": 0.79,
+      "hybrid_032": 0.959,
+      "full_correction": 0.754
+    }
+  },
+  "scale_boundary_32": {
+    "fp32_rel_l2": 0.2843,
+    "predeclared_rel_l2_criterion": 0.24,
+    "conclusion": "inconclusive"
+  }
+}

@@ -1,0 +1,17 @@
+experiment: matrix_free_lowest_eigenspace_qdc
+resolutions: [32, 64, 128]
+seeds: [101, 102, 103, 104, 105]
+candidate_k: [41, 50, 82, 100, 150, 200, 250]
+selected_k: {32: 82, 64: 150, 128: 200}
+selection: smallest_rank_with_at_least_95_percent_best_validation_same_rank_reference_rel_l2_recovery
+operational:
+  largest: false
+  tolerance: 0.0001
+  maxiter: 100
+  preconditioner: none
+reference:
+  32: exact_dense_same_rank
+  64: tighter_same_rank_lobpcg
+  128: tighter_same_rank_lobpcg
+  tolerance: 1.0e-8
+  maxiter: 300

@@ -1,0 +1,8 @@
+experiment: e4m3fn
+resolution: 32
+seeds: [101, 102, 103, 104, 105]
+format: E4M3FN
+saturation: largest_finite_value
+variants: [activation, weight]
+accumulation: fp32
+statistics: {interval: paired_t, confidence: 0.95}

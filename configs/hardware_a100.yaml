@@ -1,0 +1,101 @@
+experiment: a100_hybrid
+resolution: 32
+batch_size: 16
+warmup_batches: 50
+measurement_batches: 100
+gpu: NVIDIA A100-SXM4
+gpu_memory_gb: 40
+architecture: SM80
+compile_architecture: sm_80
+mig: disabled
+fft: FP16 cuFFT
+spectral_storage: INT8
+spectral_gemm: INT8 CUTLASS
+complex_product: four_real_gemms
+accumulation: INT32
+reduction: FP32
+timing: synchronized_cuda_events_median
+exclude_host_device_transfer: true
+include_online_quant_dequant: true
+qdc_rank: 41
+qdc_rank_rationale: illustrative_lower_rank_hardware_operating_point_distinct_from_primary_calibration_selected_budget
+setup_ms: 14.25
+setup_backend: cuSOLVER
+fp32_reference_tf32: false
+fixed_operator_reuse: true
+scope: fixed_operator_repeated_queries
+variable_operator_setup_amortization: not_measured
+hardware_object_asymmetry_claim: false
+hardware_quantization_policy: W8A8_separate_from_core_Q6_diagnosis
+amortization_batches: 100
+amortization_examples: 1600
+gpu_clock_policy: default_dvfs_application_clocks_not_locked
+power_limit_policy: default_not_manually_modified
+derived_median_batch_latency_ms:
+  fp32: 2.1505376344
+  w8a8: 1.4285714286
+  w8a8_qdc_online: 1.7877094972
+derived_setup_inclusive_total_ms: 193.0209497207
+historical_measurement_environment:
+  host: NVIDIA DGX A100 320GB
+  gpu: NVIDIA A100-SXM4 40GB
+  gpu_architecture: SM80
+  gpus_per_ordinary_run: 1
+  distributed_training: false
+  mig: disabled
+  os: Linux x86_64
+  python: 3.11.x
+  pytorch: 2.7.0+cu128
+  cuda_runtime_toolkit: '12.8'
+  nvidia_driver: 570.133.20
+  cutlass: 4.5.3
+  cufft: CUDA_12.8_release_family
+  cusolver: CUDA_12.8_release_family
+  compile_architecture: sm_80
+later_reproduction_environment:
+  python: '3.11'
+  pytorch: 2.7.0
+  cuda: '12.8'
+  cutlass: 4.7.0
+  note: later_validated_target_not_historical_measurement
+derived_break_even_vs_fp32:
+  batches: 39.2747930464
+  examples: 628.396688742
+  setup_inclusive_examples_per_s_40_batches: 7462.82754914
+  setup_inclusive_examples_per_s_50_batches: 7719.36444618
+  note: arithmetic consequences of retained throughput aggregates and setup time; not additional timing
+    samples
+
+verified_model_workload_provenance:
+  pde_family: scalar_fractional_darcy
+  model:
+    width: 96
+    retained_modes: 12
+    spectral_layers: 6
+    head_width: 128
+    train_examples: 1800
+    validation_examples: 256
+    epochs: 200
+    training_batch_size: 16
+    optimizer: AdamW
+    learning_rate: 0.0018
+    weight_decay: 1.0e-5
+    checkpoint_selection: minimum_validation_MSE
+  fixed_operator:
+    lambda: 0.15
+    s: 0.65
+    coefficient_contrast_approx: 1.0
+    coefficient_realization: single_fixed_moderate_contrast
+  query_stream:
+    varying_quantity: forcing_f
+    queries: 1600
+    same_base_checkpoint_across_conditions: true
+    same_samples_across_conditions: true
+  distinct_n32_scale_stress:
+    different_checkpoint: true
+    sample_varying_operator_and_forcing: true
+    smoothness_range: [2.1, 3.1]
+    contrast_range: [1.0, 1.3]
+    s_values: [0.45, 0.65, 0.85, 1.0]
+    fp32_rel_l2: 0.2843
+historical_integrated_runner: not_bundled
