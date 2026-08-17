@@ -1,4 +1,5 @@
 # Quantized Defect Correction for Fractional Neural Operators - Reproducibility Artifact
+[![DOI](https://zenodo.org/badge/1336958141.svg)](https://doi.org/10.5281/zenodo.21977847)
 
 This archive accompanies **Conditional Precision Bottlenecks and Quantized Defect Correction in Fractional Neural Operators**. It is a cleaned reproducibility implementation organized from the verified experimental protocol rather than a verbatim dump of exploratory notebooks.
 
