@@ -1,4 +1,5 @@
 # Quantized Defect Correction for Fractional Neural Operators - Reproducibility Artifact
+[![DOI](https://zenodo.org/badge/1336958141.svg)](https://doi.org/10.5281/zenodo.21977847)
 
 [![DOI](https://zenodo.org/badge/1336958141.svg)](https://doi.org/10.5281/zenodo.21977847)
 
