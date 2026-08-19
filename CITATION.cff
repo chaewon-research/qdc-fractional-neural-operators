@@ -1,8 +1,8 @@
 cff-version: 1.2.0
 message: "If you use this research software, please cite the accompanying preprint and this repository."
 title: "QDC Fractional Neural Operators"
-version: 0.1.0
-date-released: 2026-08-17
+version: 0.1.1
+date-released: 2026-08-18
 authors:
   - family-names: Yoon
     given-names: Chaewon

@@ -1,5 +1,7 @@
 # Quantized Defect Correction for Fractional Neural Operators - Reproducibility Artifact
 
+[![DOI](https://zenodo.org/badge/1336958141.svg)](https://doi.org/10.5281/zenodo.21977847)
+
 This archive accompanies **Conditional Precision Bottlenecks and Quantized Defect Correction in Fractional Neural Operators**. It is a cleaned reproducibility implementation organized from the verified experimental protocol rather than a verbatim dump of exploratory notebooks.
 
 Historical training/fine-tuning used FP32 parameters and optimization without AMP/autocast, GradScaler, BF16, or FP16 model training. The FP16-FFT/INT8 path is confined to the specialized A100 inference audit. Historical environment and compute provenance are documented in `ENVIRONMENTS.md` and `COMPUTE_ACCOUNTING.md`; retrospectively reconstructed compute is reported as ranges rather than invented exact totals.
